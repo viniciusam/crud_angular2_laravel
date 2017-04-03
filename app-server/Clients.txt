@@ -1,0 +1,2 @@
+client_id: 3
+client_secret: P7T0ClKsf9jQyZ9dX7HI7GRsDAp3Ngd48MqRUa8s

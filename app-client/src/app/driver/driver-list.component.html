@@ -1,0 +1,32 @@
+<h1>Driver List</h1>
+<loading-indicator [isLoading]="!drivers"></loading-indicator>
+<table class="table table-bordered" *ngIf="drivers">
+  <thead class="">
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>License Number</th>
+      <th>License Exp</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="drivers.length == 0">
+      <td colspan="7">No drivers found.</td>
+    </tr>
+    <tr *ngFor="let driver of drivers">
+      <td>{{ driver.id }}</td>
+      <td>{{ driver.first_name }}</td>
+      <td>{{ driver.last_name }}</td>
+      <td>{{ driver.email }}</td>
+      <td>{{ driver.license_number }}</td>
+      <td>{{ driver.license_exp }}</td>
+      <td>
+        <a [routerLink]="['/driver', driver.id, 'edit']"><i class="fa fa-lg fa-pencil" aria-hidden="true"></i></a>
+        <a [routerLink]="" (click)="delete(driver)"><i class="fa fa-lg fa-trash" aria-hidden="true"></i></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
